@@ -1,0 +1,3 @@
+resources:
+- t4-dev-environment.yaml
+- t4-dev-rolebinding.yaml
