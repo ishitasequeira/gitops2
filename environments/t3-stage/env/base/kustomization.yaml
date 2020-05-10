@@ -1,2 +1,3 @@
 resources:
 - t3-stage-environment.yaml
+- t3-stage-rolebinding.yaml

@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: null
+  name: t3-stage-bs
+  namespace: argocd
+spec:
+  destination:
+    namespace: t3-stage
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: environments/t3-stage/apps/bs/base
+    repoURL: https://github.com/ishitasequeira/gitops2.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""
