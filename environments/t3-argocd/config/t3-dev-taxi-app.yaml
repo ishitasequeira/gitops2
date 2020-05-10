@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: null
+  name: t3-dev-taxi
+  namespace: argocd
+spec:
+  destination:
+    namespace: t3-dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: environments/t3-dev/apps/taxi/base
+    repoURL: https://github.com/ishitasequeira/gitops2.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""
