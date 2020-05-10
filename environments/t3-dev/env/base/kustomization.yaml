@@ -1,3 +1,0 @@
-resources:
-- t3-dev-environment.yaml
-- t3-dev-rolebinding.yaml
