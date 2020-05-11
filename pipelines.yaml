@@ -15,7 +15,18 @@ environments:
       secret:
         name: github-webhook-secret-taxi-svc
         namespace: t4-cicd
-- name: t4-stage
+- apps:
+  - name: bs
+    services:
+    - bus
+  name: t4-stage
+  services:
+  - name: bus
+    source_url: https://github.com/ishitasequeira/bus.git
+    webhook:
+      secret:
+        name: github-webhook-secret-bus-svc
+        namespace: t4-cicd
 - cicd: true
   name: t4-cicd
 - argo: true

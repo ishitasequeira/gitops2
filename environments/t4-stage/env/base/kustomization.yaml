@@ -1,2 +1,3 @@
 resources:
 - t4-stage-environment.yaml
+- t4-stage-rolebinding.yaml
