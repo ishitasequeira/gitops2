@@ -1,3 +1,0 @@
-resources:
-- t5-dev-environment.yaml
-- t5-dev-rolebinding.yaml
