@@ -1,0 +1,23 @@
+environments:
+- apps:
+  - name: taxi
+    services:
+    - taxi-svc
+  name: t5-dev
+  pipelines:
+    integration:
+      binding: github-pr-binding
+      template: app-ci-template
+  services:
+  - name: taxi-svc
+    source_url: https://github.com/ishitasequeira/taxi.git
+    webhook:
+      secret:
+        name: github-webhook-secret-taxi-svc
+        namespace: t5-cicd
+- name: t5-stage
+- cicd: true
+  name: t5-cicd
+- argo: true
+  name: t5-argocd
+gitops_url: https://github.com/ishitasequeira/gitops2.git
