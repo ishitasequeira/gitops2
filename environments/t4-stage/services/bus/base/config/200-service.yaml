@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: bus
   name: bus
-  namespace: t3-stage
+  namespace: t4-stage
 spec:
   ports:
   - name: http

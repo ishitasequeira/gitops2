@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   name: bus
-  namespace: t3-stage
+  namespace: t4-stage
 spec:
   replicas: 1
   selector:
