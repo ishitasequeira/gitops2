@@ -1,2 +1,3 @@
 resources:
 - demo-dev-taxi-app.yaml
+- demo-stage-bs-app.yaml
