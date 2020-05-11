@@ -28,6 +28,21 @@ spec:
     - cel:
         filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
           'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
+          == 'ishitasequeira/bus'
+    - github:
+        secretRef:
+          namespace: t5-cicd
+          secretKey: webhook-secret-key
+          secretName: github-webhook-secret-bus-svc
+    name: app-ci-build-from-pr-bus
+    template:
+      name: app-ci-template
+  - bindings:
+    - name: github-pr-binding
+    interceptors:
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
+          'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
           == 'ishitasequeira/gitops2'
     - github:
         secretRef:
