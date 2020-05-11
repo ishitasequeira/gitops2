@@ -1,2 +1,3 @@
 resources:
 - t4-dev-taxi-app.yaml
+- t4-stage-bs-app.yaml
