@@ -1,0 +1,3 @@
+resources:
+- demo1-stage-environment.yaml
+- demo1-stage-rolebinding.yaml
