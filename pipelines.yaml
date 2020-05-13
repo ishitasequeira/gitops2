@@ -32,3 +32,4 @@ environments:
 - argo: true
   name: demo-argocd
 gitops_url: https://github.com/ishitasequeira/gitops2.git
+
