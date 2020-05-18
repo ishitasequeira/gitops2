@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: demo1-cicd-taxi-svc-binding
+  namespace: demo1-cicd
+spec:
+  params:
+  - name: imageRepo
+    value: image-registry.openshift-image-registry.svc:5000/test/taxi
+status: {}
