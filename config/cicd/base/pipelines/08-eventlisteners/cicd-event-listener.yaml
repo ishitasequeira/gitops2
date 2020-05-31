@@ -9,7 +9,6 @@ spec:
   triggers:
   - bindings:
     - name: dev-taxi-svc-binding
-    - name: github-pr-binding
     interceptors:
     - cel:
         filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
