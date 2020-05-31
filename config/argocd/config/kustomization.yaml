@@ -1,0 +1,4 @@
+resources:
+- dev-bs-app.yaml
+- dev-taxi-app.yaml
+- kustomization.yaml
