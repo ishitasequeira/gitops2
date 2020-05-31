@@ -1,9 +1,17 @@
+config:
+  argocdenv:
+    namespace: argocd
+  cicdenv:
+    namespace: cicd
 environments:
 - apps:
   - name: taxi
     services:
     - taxi-svc
-  name: demo1-dev
+  - name: bs
+    services:
+    - bus1
+  name: dev
   pipelines:
     integration:
       bindings:
@@ -14,16 +22,18 @@ environments:
     pipelines:
       integration:
         bindings:
-        - demo1-cicd-taxi-svc-binding
+        - dev-taxi-svc-binding
         - github-pr-binding
     source_url: https://github.com/ishitasequeira/taxi.git
     webhook:
       secret:
         name: github-webhook-secret-taxi-svc
-        namespace: demo1-cicd
-- name: demo1-stage
-- cicd: true
-  name: demo1-cicd
-- argo: true
-  name: demo1-argocd
-gitops_url: https://github.com/ishitasequeira/gitops2.git
+        namespace: cicd
+  - name: bus1
+    source_url: https://github.com/ishitasequeira/bus1.git
+    webhook:
+      secret:
+        name: github-webhook-secret-bus1
+        namespace: cicd
+- name: stage
+gitops_url: https://github.com/ishitasequeira/gitops.git
