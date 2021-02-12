@@ -1,1 +1,1 @@
-# gitops2
+# gitops
